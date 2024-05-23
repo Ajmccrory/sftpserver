@@ -31,7 +31,7 @@ func main() {
 	config := &ssh.ServerConfig{
 		PasswordCallback: func(c ssh.ConnMetadata, pass []byte) (*ssh.Permissions, error) {
 			fmt.Fprintf(debugStream, "Login: %s\n", c.User())
-			if c.User() == "aj" && string(pass) == "Abcjk7869^$" {
+			if c.User() == "<your user>" && string(pass) == "<your password>" {
 				return nil, nil
 			}
 			return nil, fmt.Errorf("password rejected for %q", c.User())
